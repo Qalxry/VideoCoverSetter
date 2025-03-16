@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">VideoCoverSetter</string>
+    <string name="select_video">Select Video</string>
+    <string name="capture_frame">Capture Frame</string>
+    <string name="set_cover">Set Cover</string>
+    <string name="captured_frame">Captured Frame</string>
+    <string name="minus_10s">-10s</string>
+    <string name="minus_1s">-1s</string>
+    <string name="minus_0_1s">-0.1s</string>
+    <string name="plus_0_1s">+0.1s</string>
+    <string name="plus_1s">+1s</string>
+    <string name="plus_10s">+10s</string>
+    <string name="error_loading_video">Error loading video</string>
+    <string name="error_capturing_frame">Error capturing frame</string>
+</resources>

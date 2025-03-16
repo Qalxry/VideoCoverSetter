@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorOnSecondary"
+    android:padding="16dp"
+    app:layout_constraintCircleRadius="10dp"
+    tools:context="com.shizuri.videocoversetter.MainActivity">
+
+    <!-- Video Player -->
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#333333"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:show_buffering="always"
+        app:surface_type="texture_view" />
+
+    <!-- Time Control Buttons -->
+    <LinearLayout
+        android:id="@+id/timeControlScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/playerView">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_minus_10s"
+            style="@style/Widget.MaterialComponents.TimePicker.Button"
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:text="@string/minus_10s"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="10sp"
+            app:strokeColor="?attr/colorSecondaryVariant" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_minus_1s"
+            style="@style/Widget.MaterialComponents.TimePicker.Button"
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:text="@string/minus_1s"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="10sp"
+            app:strokeColor="?attr/colorSecondaryVariant" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_minus_point_1s"
+            style="@style/Widget.MaterialComponents.TimePicker.Button"
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:text="@string/minus_0_1s"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="10sp"
+            app:strokeColor="?attr/colorSecondaryVariant" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_plus_point_1s"
+            style="@style/Widget.MaterialComponents.TimePicker.Button"
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:text="@string/plus_0_1s"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="10sp"
+            app:strokeColor="?attr/colorSecondaryVariant" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_plus_1s"
+            style="@style/Widget.MaterialComponents.TimePicker.Button"
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:text="@string/plus_1s"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="10sp"
+            app:strokeColor="?attr/colorSecondaryVariant" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_plus_10s"
+            style="@style/Widget.MaterialComponents.TimePicker.Button"
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:text="@string/plus_10s"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="10sp"
+            app:strokeColor="?attr/colorSecondaryVariant" />
+    </LinearLayout>
+
+    <!-- File Selection and Frame Capture Controls -->
+    <LinearLayout
+        android:id="@+id/controlsContainer"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timeControlScrollView">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_select_video"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="@string/select_video"
+            android:textSize="12sp"
+            app:cornerRadius="10sp"
+            app:icon="@drawable/baseline_folder_24"
+            app:iconGravity="textStart"
+            app:strokeColor="?attr/colorSecondaryVariant"
+            app:strokeWidth="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_capture_frame"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:text="@string/capture_frame"
+            android:textSize="12sp"
+            app:cornerRadius="10sp"
+            app:icon="@drawable/baseline_camera_alt_24"
+            app:iconGravity="textStart"
+            app:strokeColor="?attr/colorSecondaryVariant"
+            app:strokeWidth="1dp" />
+
+    </LinearLayout>
+
+    <!-- File Selection and Frame Capture Controls -->
+    <LinearLayout
+        android:id="@+id/controlsContainer2"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/controlsContainer">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_set_cover"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/set_cover"
+            android:textSize="12sp"
+            app:cornerRadius="10sp"
+            app:icon="@drawable/baseline_image_24"
+            app:iconGravity="textStart"
+            app:strokeColor="?attr/colorSecondaryVariant"
+            app:strokeWidth="1dp" />
+
+    </LinearLayout>
+
+    <!-- Overwrite Switch -->
+    <LinearLayout
+        android:id="@+id/controlsContainer3"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/controlsContainer2">
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_overwrite"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Overwrite the original file" />
+
+    </LinearLayout>
+
+    <!-- Frame Display Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/frameDisplayCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/controlsContainer3">
+
+        <ImageView
+            android:id="@+id/iv_captured_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorOnSecondary"
+            android:contentDescription="@string/captured_frame"
+            android:scaleType="fitCenter" />
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
